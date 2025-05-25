@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload an Image</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="img" required>
+            <input type="submit" value="Upload">
+        </form>
+        <a href="{{ url_for('history') }}">View History</a>
+    </div>
+</body>
+</html>

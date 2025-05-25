@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload History</h1>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Disease</th>
+                <th>Timestamp</th>
+            </tr>
+            {% for entry in history %}
+            <tr>
+                <td><img src="{{ entry.image_path }}" width="100"></td>
+                <td>{{ entry.disease_name }}</td>
+                <td>{{ entry.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ url_for('upload') }}"><button>Upload More</button></a>
+    </div>
+</body>
+</html>
